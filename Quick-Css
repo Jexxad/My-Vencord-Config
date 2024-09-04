@@ -1589,3 +1589,73 @@ div:not([class^=customizationSection], [class*=preview]) > div:is([class^=biteSi
   height: 24px !important;
 }
 /*# sourceMappingURL=main.css.map */
+
+
+/* Center the profile container and align items horizontally */
+.avatarWrapper_b2ca13 {
+    display: flex;             /* Use flexbox for alignment */
+    align-items: center;       /* Vertically center items */
+    justify-content: space-between; /* Spread items, pushing buttons to the right */
+    width: 100%;               /* Make sure the wrapper takes full width */
+}
+
+/* Ensure the avatar icon is displayed correctly */
+.wrapper_c51b4e {
+    margin-right: 6px;        /* Space between avatar and text */
+}
+
+/* Container for profile text with separator */
+.nameTag_b2ca13 {
+    display: flex;             /* Use flexbox for horizontal layout */
+    align-items: center;       /* Vertically center text */
+}
+
+/* Profile text elements with a separator line between them */
+.panelTitleContainer_b2ca13 {
+    margin-right: 8px;         /* Space between title and separator */
+    display: flex;             /* Ensure title container is a flexbox item */
+    align-items: center;       /* Vertically center title text */
+    font-size: 1.2em;          /* Increase the font size for title */
+}
+
+.panelSubtextContainer_b2ca13 {
+    margin-left: 4px;          /* Space between separator and subtext */
+    display: flex;             /* Ensure subtext container is a flexbox item */
+    align-items: center;       /* Vertically center subtext text */
+    font-size: 1.2em;          /* Increase the font size for subtext */
+    max-width: 100%;           /* Ensure it doesn't exceed container width */
+    overflow: hidden;          /* Hide overflow */
+    text-overflow: ellipsis;   /* Add ellipsis for overflowing text */
+    white-space: nowrap;       /* Prevent line breaks */
+}
+
+/* Separator line between text elements */
+.panelTitleContainer_b2ca13::after {
+    content: "";
+    display: inline-block;
+    width: 1px;                /* Width of the separator line */
+    height: 20px;              /* Height of the separator line */
+    background-color: #454545; /* Match the background color of the chat */
+    margin-left: 10px;         /* Space between title and separator */
+}
+
+/* Move buttons to the right */
+.nameTag_b2ca13 + .flex-3B1Tl4 {
+    margin-left: auto;         /* Push buttons to the right */
+    display: flex;             /* Ensure buttons are aligned correctly */
+    align-items: center;       /* Vertically center buttons */
+}
+
+/* remove stuff no one uses */
+a[href="https://support.discord.com"], /* help button */
+.recentsIcon_ea0547, /* inbox button */
+.nowPlayingColumn_f5023f, /* active now sidebar */
+.newChannel_f99b92, /* the "NEW" text thats next to channels */
+.iconWrapper_af9215:has([d^="M12 22C12.4883"]), /* User Profile Button*/
+.buttons_ce5b56 > .button_afdfd9, /* send gift button */
+button[aria-label="Deafen"], /* deafen button */
+button[aria-label="Mute"] /* microphone toggle */
+{ 
+  display: none;
+}
+
