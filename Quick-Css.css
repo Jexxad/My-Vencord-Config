@@ -308,6 +308,35 @@ a[href="https://support.discord.com"], /* help button */
 .buttons_ce5b56 > .button_afdfd9, /* send gift button */
 button[aria-label="Deafen"], /* deafen button */
 button[aria-label="Mute"] /* microphone toggle */
+
+
+/* GENERAL HIDE */
+/* nitro & shop buttons above DM list (more space efficient) - #1 */
+[data-list-id^=private-channels] > ul > li:has([href="/store"],[href="/shop"]),
+/* nitro button (in case it's anywhere else) */
+[href="/store"],
+/* shop button (in case it's anywhere else) */
+[href="/shop"],
+/* nitro button - #2  */
+[class^=shinyButton_]:has(> [class*=premiumSubscribeButton_]),
+/* nitro upselling in server boosting screen - #3 */
+[class^=guildStatus_] [class^=guildBoostCtas_] [class^=guildBoostCta_][class*=guildBoostCtaSecondary_],
+/* nitro icon in stream quality - #4 */
+[class^=streamQualityIndicator_] [class^=premiumStreamIcon_],
+/* nitro icon on banner hover - #49 */
+[class^=banner_] [class^=premiumIcon],
+/* random side popup theme upsell - #5 */
+#app-mount > [class^=appAsidePanelWrapper_] > [class^=themeEditor_]:has([class^=shinyButton_]) {
+    display: none;
+}
+
+/* disable hovering tooltip on nitro icon in stream quality - #6 */
+[class^=streamQualityIndicator_]:has([class^=premiumStreamIcon_]),
+/* disable clicking on anything that redirects to nitro page (e.g. nitro badge) */
+[href="https://discord.com/settings/premium"]:active {
+  pointer-events: none;
+}
+
 { 
   display: none;
 }
