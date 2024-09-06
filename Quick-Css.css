@@ -1,0 +1,314 @@
+/*@import url("https://minidiscordthemes.github.io/Snippets/ClippyStatus/main.css");*/
+@import url("https://raw.githubusercontent.com/Jexxad/My-Vencord-Config/main/RevertProfiles.css");
+@import url("https://raw.githubusercontent.com/Jexxad/My-Vencord-Config/main/AtBeforeNames.css");
+@import url("https://raw.githubusercontent.com/Jexxad/My-Vencord-Config/main/InLineStatus.css")
+
+
+/* blured spotify player*/
+
+#vc-spotify-player {
+    --blur-amount: 3px; /* higher px = stronger blur, 0 = no blur */
+    --darken-percent: 0.8; /* 0 = album cover is not darkened, 1 = album cover is darkened fully (black) */
+}
+
+#vc-spotify-player {
+    background: transparent !important;
+    position: relative;
+}
+
+#vc-spotify-player > * {
+    position: relative;
+    z-index: 1;
+}
+
+#vc-spotify-player::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgba(0, 0, 0, var(--darken-percent)),
+            rgba(0, 0, 0, var(--darken-percent))), var(--vc-spotify-track-image);
+    background-size: cover;
+    filter: blur(var(--blur-amount));
+    clip-path: inset(0);
+}
+
+
+
+
+
+
+/* Rounded User Panel */
+
+[class^="sidebar_"] [class^="panels_"] {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  border: 1px solid var(--background-modifier-accent);
+  border-radius: 20px;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.45);
+}
+
+[class^="sidebar_"] [class^="panels_"] [class^="container_"],
+[class^="sidebar_"] [class^="panels_"] [class^="panel_"] {
+  background: transparent !important;
+}
+
+[class^="sidebar_"] [class^="panels_"] [class^="container_"] [class^="avatarWrapper_"] + [class^="flex_"] {
+  margin-left: -10px;
+}
+
+#vc-spotify-player {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+
+/* (fix ⁠Channels & Roles, ⁠Browse Channels */
+
+.container__10dc7, .header__60bef, .scrollerContainer_bf5dbd .container__7590f {
+  background-color: var(--background-primary) !important;
+}
+
+/* Hide the call buttons in a dm so you don't accidentally call someone */
+
+[aria-label="Start Voice Call"], [aria-label="Start Video Call"]
+{
+    display: none !important;
+}
+
+
+/* 
+Hide chat box if you have no permissions to write in the channel
+*/
+
+[class*=channelTextAreaDisabled] {
+    display: none!important;
+}
+
+/* or if it doesn't work like because of themes: */
+[class*=channelTextAreaDisabled] {
+    opacity: 0!important;
+    position: absolute!important;
+    height: 0px!important;
+    width: 0px!important;
+    z-index: 0!important;
+}
+
+
+
+before and after
+*/
+
+.appLauncherOnboardingCommandName_bf880c.clickable__09456 {
+    background: 0 0;
+    padding-left: 0;
+}
+
+.appsIcon_ed21e9 {
+  display: none;
+}
+
+.executedCommand__4fb1a .appLauncherOnboardingCommandName_bf880c:hover {
+    background: 0 0;
+}
+
+
+/* 
+continuing the look of Profiles!
+
+Before/After (top = before, bottom = after):
+*/
+
+/* Match Badges Border Color with Profile Button Color for Custom Profiles */
+.custom-profile-theme [aria-label="User Badges"] {
+  border-color: var(--profile-gradient-button-color);
+}
+/* Match Full Size Profile Box Border Color with Profile Button Color for Custom Profiles */
+.custom-profile-theme [class^=fullSizeOverlayBackground] {
+  border-color: var(--profile-gradient-button-color)!important;
+}
+/* Add Panel Profile Box Border Color with Profile Button Color for Custom Profiles */
+[class^=userPanelInner_] :is([class^=overlayBackground_], [class^=activityBiteSizePopout_]) {
+  border: 1px solid var(--profile-gradient-button-color);
+}
+/* Match Profile Scroller with Profile Button Color for Custom Profiles */
+.custom-profile-theme [class*=scrollerBase_]::-webkit-scrollbar-thumb {
+  background-color: var(--profile-gradient-button-color);
+}
+/* Match Clan Button Color with Profile Button Color for Custom Profiles */
+.custom-profile-theme [class^=chipletContainerInner_] {
+  background: var(--profile-gradient-button-color);
+}
+/* Match Show More Roles and View Permissions (Permissions Plugin) Border Color with Profile Button Color for Custom Profiles */
+.custom-profile-theme :is([class^=showMoreButton_], .vc-permviewer-role-button)  {
+  border-color: var(--profile-gradient-button-color);
+}
+/* Add Border to Activities and Match with Profile Button Color for Custom Profiles 
+.custom-profile-theme [class^=activityBiteSizePopout_] {
+    border: 1px solid var(--profile-gradient-button-color);
+}
+/* Match Connections Border Color with Profile Button Color for Custom Profiles */
+.custom-profile-theme [class^=connectedAccountContainer_] {
+    border-color: var(--profile-gradient-button-color);
+}
+
+/* 
+**Make discord actually usable on low width windows**
+-# Descendant Selector? What is that
+*/
+
+@media (max-width: 1100px)
+{
+    [class*="sidebar_"]
+    {
+        width: 200px;
+        .vc-typing-indicator, .vc-channelemojis-emoji, [class*="guildIconV2Container_"]
+        {
+            display: none;
+        }
+        [class*="containerDefault_"]
+        {
+            [role="img"]
+            {
+                display: none;
+            }
+        }
+    }
+    [class*="chat_"]
+    {
+        [class*="membersWrap_"]
+        {
+            display: none;
+        }
+    }
+}
+
+/* 
+**Modernized audio attachments**
+
+Before and after
+*/
+
+/*     Modernized audio attachments      */
+[class^="mosaicItem"] > [class^="wrapperAudio"] > [class^="audioMetadata"] {
+  margin-bottom: 24px;
+}
+[class^="mosaicItem"] > [class^="wrapperAudio"] > [class^="audioControls"] {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  border-radius: 0px 0px 8px 8px;
+}
+
+/* 
+moves the message buttons above the message to avoid this issue:
+https://discord.com/channels/1015060230222131221/1015060231060983891/1263664445171830957
+*/
+
+[class*=buttonContainer] > [class*=buttons_] {
+    transform: translateY(-50%);
+}
+
+
+
+/* 
+**Removed App Launcher**
+Thank me later, removed the new annoying app launcher
+*/
+
+[class*=channelAppLauncher_] {
+  display: none;
+}
+
+/* remove stuff no one uses */
+a[href="https://support.discord.com"], /* help button */
+.recentsIcon__3c4cf, /* inbox button */
+.nowPlayingColumn_f5023f, /* active now sidebar */
+.newChannel_f99b92, /* the "NEW" text thats next to channels */
+.iconWrapper_af9215:has([d^="M12 22C12.4883"]), /* User Profile Button*/
+.buttons_ce5b56 > .button_afdfd9 /* send gift button */
+{ 
+  display: none;
+}
+
+
+.anchor_af404b[title$=")"]::after {
+  font-size: 0.7rem;
+  content: " (" attr(href) ")";
+  filter: grayscale(0.4);
+}
+
+
+
+/* Center the profile container and align items horizontally */
+.avatarWrapper_b2ca13 {
+    display: flex;             /* Use flexbox for alignment */
+    align-items: center;       /* Vertically center items */
+    justify-content: space-between; /* Spread items, pushing buttons to the right */
+    width: 100%;               /* Make sure the wrapper takes full width */
+}
+
+/* Ensure the avatar icon is displayed correctly */
+.wrapper_c51b4e {
+    margin-right: 6px;        /* Space between avatar and text */
+}
+
+/* Container for profile text with separator */
+.nameTag_b2ca13 {
+    display: flex;             /* Use flexbox for horizontal layout */
+    align-items: center;       /* Vertically center text */
+}
+
+/* Profile text elements with a separator line between them */
+.panelTitleContainer_b2ca13 {
+    margin-right: 8px;         /* Space between title and separator */
+    display: flex;             /* Ensure title container is a flexbox item */
+    align-items: center;       /* Vertically center title text */
+    font-size: 1.2em;          /* Increase the font size for title */
+}
+
+.panelSubtextContainer_b2ca13 {
+    margin-left: 4px;          /* Space between separator and subtext */
+    display: flex;             /* Ensure subtext container is a flexbox item */
+    align-items: center;       /* Vertically center subtext text */
+    font-size: 1.2em;          /* Increase the font size for subtext */
+    max-width: 100%;           /* Ensure it doesn't exceed container width */
+    overflow: hidden;          /* Hide overflow */
+    text-overflow: ellipsis;   /* Add ellipsis for overflowing text */
+    white-space: nowrap;       /* Prevent line breaks */
+}
+
+/* Separator line between text elements */
+.panelTitleContainer_b2ca13::after {
+    content: "";
+    display: inline-block;
+    width: 1px;                /* Width of the separator line */
+    height: 20px;              /* Height of the separator line */
+    background-color: #454545; /* Match the background color of the chat */
+    margin-left: 10px;         /* Space between title and separator */
+}
+
+/* Move buttons to the right */
+.nameTag_b2ca13 + .flex-3B1Tl4 {
+    margin-left: auto;         /* Push buttons to the right */
+    display: flex;             /* Ensure buttons are aligned correctly */
+    align-items: center;       /* Vertically center buttons */
+}
+
+/* remove stuff no one uses */
+a[href="https://support.discord.com"], /* help button */
+.recentsIcon_ea0547, /* inbox button */
+.nowPlayingColumn_f5023f, /* active now sidebar */
+.newChannel_f99b92, /* the "NEW" text thats next to channels */
+.iconWrapper_af9215:has([d^="M12 22C12.4883"]), /* User Profile Button*/
+.buttons_ce5b56 > .button_afdfd9, /* send gift button */
+button[aria-label="Deafen"], /* deafen button */
+button[aria-label="Mute"] /* microphone toggle */
+{ 
+  display: none;
+}
+
