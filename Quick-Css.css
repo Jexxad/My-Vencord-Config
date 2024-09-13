@@ -1,42 +1,9 @@
 /*@import url("https://minidiscordthemes.github.io/Snippets/ClippyStatus/main.css");*/
+@import url("https://raw.githubusercontent.com/tom22k/discord-css/main/Themes/AndroidPlayer.css"); 
 @import url("https://raw.githubusercontent.com/Jexxad/My-Vencord-Config/main/RevertProfiles.css");
 @import url("https://raw.githubusercontent.com/Jexxad/My-Vencord-Config/main/AtBeforeNames.css");
-@import url("https://raw.githubusercontent.com/Jexxad/My-Vencord-Config/main/InLineStatus.css")
-
-
-/* blured spotify player*/
-
-#vc-spotify-player {
-    --blur-amount: 3px; /* higher px = stronger blur, 0 = no blur */
-    --darken-percent: 0.8; /* 0 = album cover is not darkened, 1 = album cover is darkened fully (black) */
-}
-
-#vc-spotify-player {
-    background: transparent !important;
-    position: relative;
-}
-
-#vc-spotify-player > * {
-    position: relative;
-    z-index: 1;
-}
-
-#vc-spotify-player::after {
-    content: "";
-    position: absolute;
-    display: block;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: linear-gradient(rgba(0, 0, 0, var(--darken-percent)),
-            rgba(0, 0, 0, var(--darken-percent))), var(--vc-spotify-track-image);
-    background-size: cover;
-    filter: blur(var(--blur-amount));
-    clip-path: inset(0);
-}
-
-
+@import url("https://raw.githubusercontent.com/Jexxad/My-Vencord-Config/main/InLineStatus.css");
+/*@import url("https://raw.githubusercontent.com/Jexxad/My-Vencord-Config/main/blured-spotify-player.css");*/
 
 
 
@@ -231,10 +198,14 @@ a[href="https://support.discord.com"], /* help button */
 .newChannel_f99b92, /* the "NEW" text thats next to channels */
 .iconWrapper_af9215:has([d^="M12 22C12.4883"]), /* User Profile Button*/
 .buttons_ce5b56 > .button_afdfd9 /* send gift button */
+.labelContainer_d90b3d
 { 
   display: none;
 }
-
+/* New CSS to remove the "Open Album" menu item */
+#spotify-album-menu-open-album {
+  display: none;
+}
 
 .anchor_af404b[title$=")"]::after {
   font-size: 0.7rem;
@@ -305,9 +276,11 @@ a[href="https://support.discord.com"], /* help button */
 .nowPlayingColumn_f5023f, /* active now sidebar */
 .newChannel_f99b92, /* the "NEW" text thats next to channels */
 .iconWrapper_af9215:has([d^="M12 22C12.4883"]), /* User Profile Button*/
-.buttons_ce5b56 > .button_afdfd9, /* send gift button */
 button[aria-label="Deafen"], /* deafen button */
 button[aria-label="Mute"] /* microphone toggle */
+{ 
+  display: none;
+}
 
 
 /* GENERAL HIDE */
@@ -336,8 +309,13 @@ button[aria-label="Mute"] /* microphone toggle */
 [href="https://discord.com/settings/premium"]:active {
   pointer-events: none;
 }
-
-{ 
-  display: none;
+/* chat input */
+[class^=channelTextArea_] {
+    /* gift button - #40 */
+    [class^=buttons_] > button,
+    /* "Send longer messages with Discord Nitro!" - #41 */ 
+    [class^=characterCount_] [class*=upsell_] {
+        display: none;
+    }
 }
 
