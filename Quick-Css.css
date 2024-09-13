@@ -1,9 +1,9 @@
 /*@import url("https://minidiscordthemes.github.io/Snippets/ClippyStatus/main.css");*/
-@import url("https://raw.githubusercontent.com/tom22k/discord-css/main/Themes/AndroidPlayer.css"); 
-@import url("https://raw.githubusercontent.com/Jexxad/My-Vencord-Config/main/RevertProfiles.css");
-@import url("https://raw.githubusercontent.com/Jexxad/My-Vencord-Config/main/AtBeforeNames.css");
-@import url("https://raw.githubusercontent.com/Jexxad/My-Vencord-Config/main/InLineStatus.css");
-/*@import url("https://raw.githubusercontent.com/Jexxad/My-Vencord-Config/main/blured-spotify-player.css");*/
+/*@import url("https://raw.githubusercontent.com/tom22k/discord-css/main/Themes/AndroidPlayer.css"); */
+@import url("https://raw.githubusercontent.com/Jexxad/My-Vencord-Config/main/custom-css/RevertProfiles.css");
+@import url("https://raw.githubusercontent.com/Jexxad/My-Vencord-Config/main/custom-css/AtBeforeNames.css");
+@import url("https://raw.githubusercontent.com/Jexxad/My-Vencord-Config/main/custom-css/InLineStatus.css");
+@import url("https://raw.githubusercontent.com/Jexxad/My-Vencord-Config/main/custom-css/blured-spotify-player.css");
 
 
 
@@ -318,4 +318,3 @@ button[aria-label="Mute"] /* microphone toggle */
         display: none;
     }
 }
-
