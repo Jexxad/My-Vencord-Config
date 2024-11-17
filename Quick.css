@@ -1,10 +1,10 @@
 /*@import url("https://minidiscordthemes.github.io/Snippets/ClippyStatus/main.css");*/
-/*@import url("https://raw.githubusercontent.com/tom22k/discord-css/main/Themes/AndroidPlayer.css"); */
-@import url("https://raw.githubusercontent.com/Jexxad/My-Vencord-Config/main/custom-css/RevertProfiles.css");
-@import url("https://raw.githubusercontent.com/Jexxad/My-Vencord-Config/main/custom-css/AtBeforeNames.css");
-@import url("https://raw.githubusercontent.com/Jexxad/My-Vencord-Config/main/custom-css/InLineStatus.css");
+/*@import url("https://raw.githubusercontent.com/tom22k/discord-css/main/Themes/AndroidPlayer.css");
+/*@import url("https://raw.githubusercontent.com/Jexxad/My-Vencord-Config/main/custom-css/InLineStatus.css");*/
 @import url("https://raw.githubusercontent.com/Jexxad/My-Vencord-Config/main/custom-css/blured-spotify-player.css");
-
+@import url("https://gold-me.github.io/DiscordIcons/main.css");
+@import url("https://raw.githubusercontent.com/KrstlSkll69/vc-snippets/main/OtherStuff/hideGlobalDiscovery.css");
+@import url("https://raw.githubusercontent.com/KrstlSkll69/vc-snippets/main/OtherStuff/RecolorAddFriendsTab.css");
 
 
 
@@ -171,15 +171,6 @@ Before and after
   border-radius: 0px 0px 8px 8px;
 }
 
-/* 
-moves the message buttons above the message to avoid this issue:
-https://discord.com/channels/1015060230222131221/1015060231060983891/1263664445171830957
-*/
-
-[class*=buttonContainer] > [class*=buttons_] {
-    transform: translateY(-50%);
-}
-
 
 
 /* 
@@ -318,3 +309,6 @@ button[aria-label="Mute"] /* microphone toggle */
         display: none;
     }
 }
+
+/* Re-round Spotify Status Images */
+.assetsLargeImageSpotify-17ME3M{border-radius:8px;}
