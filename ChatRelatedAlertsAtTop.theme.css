@@ -10,7 +10,7 @@
   /* Set to 1 if you want them to float  *\
   |*      Recommended while using        *|
   \*      Midnight/Rounded Themes        */
-  --craat-popout: 0; /* Default = 0 */
+  --craat-popout: 1; /* Default = 0 */
   /* Change the border radius *\
   \*      for the alerts      */
   --craat-border-radius: 16px; /* default: 16px */
