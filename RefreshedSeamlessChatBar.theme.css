@@ -11,7 +11,7 @@
   --rscb-chat-box-padding: 8px;
   /* Whether you want the messages to clip through *\
   \*  the gap between slowmode and typing people   */
-  --rscb-clip-chat-through-typing-bar: 0;
+  --rscb-clip-chat-through-typing-bar: 1;
   /* certain older themes havent been *\
   \* updated, use this if necessary   */
   --rscb-use-fixed-attach-button: 0;
